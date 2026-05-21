@@ -13,7 +13,8 @@ public class CasoList
 {
     private List<Alumno> alumnos;
 
-    public CasoList() {
+    public CasoList()
+    {
 
         alumnos = new List<Alumno>();
     }
@@ -28,15 +29,25 @@ public class CasoList
         return alumnos;
     }
 
-    public Alumno BuscarAlumno(int id)
+    public Alumno BuscarAlumno(string nombre)
     {
         foreach (var alumno in alumnos)
         {
-            if (alumno.Id == id)
+            if (alumno.Nombre == nombre)
             {
                 return alumno;
             }
         }
+        return null;
+    }
 
+    public void EliminarAlumno(Alumno alumno)
+    {
+        alumnos.Remove(alumno);
+    }
+
+    public void EliminacionPorPosicion(int posicion)
+    {
+        alumnos.RemoveAt(posicion);
     }
 }
